@@ -3,16 +3,13 @@ const express = require("express");
 const dayController = require("../../../controllers/day");
 const jsonParser = express.json();
 const router = express.Router();
-const { auth } = require("../../../middlewares");
 
-router.get("/day", auth, dayController.dayInfo);
-router.post("/day", auth, jsonParser, dayController.createDay);
-router.patch("/day/breakfast", auth, jsonParser, dayController.updateBreakfast);
-router.patch("/day/lunch", auth, jsonParser,  dayController.updateLunch);
-router.patch("/day/diner", auth, jsonParser,  dayController.updateDiner);
-router.patch("/day/snack", auth, jsonParser, dayController.updateSnack);
-router.patch("/day/water", auth, jsonParser, dayController.updateWater);
-router.get("/day/moth", auth, dayController.monthStatistic);
-router.get("/day/year", auth, dayController.yearStatistic);
+router.get("/day", dayController.dayInfo);
+router.post("/day", jsonParser, dayController.createDay);
+router.get("/day/month", dayController.monthStatistic);
+router.get("/day/year", dayController.yearStatistic);
+router.post("/food-intake", jsonParser, dayController.foodIntake);
+router.put("/food-intake/:id", jsonParser, dayController.editFoodIntake);
+router.post("/water-intake", jsonParser, dayController.updateWater);
 
 module.exports = router;

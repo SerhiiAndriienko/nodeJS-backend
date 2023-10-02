@@ -1,16 +1,9 @@
-// const { Schema, model } = require("mongoose");
 const mongoose = require('mongoose');
 
-
 const daySchema = new mongoose.Schema({
-    date: Date,
-    calories: Number,    
+    date: Date,  
     water: Number,
     weight: Number,
-    carbonohidrates: Number,
-    protein: Number,
-    fat: Number,
-    calories: Number,
     isChanged: {
         type: Boolean,
         default: false,
@@ -60,7 +53,7 @@ const daySchema = new mongoose.Schema({
                 required: true,
             },
         },],
-    diner: [{
+    dinner: [{
             name: {
                 type: String,
                 required: true,
@@ -105,10 +98,6 @@ const daySchema = new mongoose.Schema({
             },
         },],
     ownerId: mongoose.Schema.ObjectId,
-    // {
-    //     type: mongoose.Schema.ObjectId,
-    //     required: true,
-    // },
 },
 { versionKey: false }
 );

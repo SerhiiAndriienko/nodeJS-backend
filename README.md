@@ -1,4 +1,4 @@
-# Node.js Educational Project API
+# Node.js Project API
 
 This project is a simple Node.js API application that handles requests from the frontend and interacts with MongoDB database for data storage and retrieval.
 
